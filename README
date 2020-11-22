@@ -6,6 +6,9 @@
 
 
 Part 1 Explanation:
+Part 1 used a XSS attack that inputs a form and javascript code into the search field. And the search field interpretes
+the input as actual html code. The attack then constructed a fake login screen and submits recorded info to a designated
+web address
 
 
 Part 2 Explanation:
@@ -23,7 +26,8 @@ Part 5 Explanation:
 Part 6 Explanation:
 Part 6 is an exploit in website's SQL that allows attacker to inject a SQL command as a string in the WHERE condition. 
 To do so, we first terminate the string, then set a condition that's always true such as 1=1, then terminate with --.
-This means the WHERE condition will always be true, so SQL will print every entry, instead of checking for a specific user.
+This means the WHERE condition will always be true, so SQL will print every entry, instead of checking for a specific
+user.
 
 Part 7 Explanation:
 Part 7 is injecting a SQL command that can modify the SQL database. The first part is to set a user's salary to some
@@ -33,15 +37,15 @@ trigger function that we set. This is done by using a CREATE TRIGGER command aft
 The condition for trigger is whenever a new user is inputed, set that user's email to our desired email.
 
 Part 8 Explanation:
-For part 8, we want to find the pin of a credit card number using the boolean check. To do so, we first start by entering
-a valid account number which we know will yeild as valid. Then we make an 'EXISTS' statement following an 'AND', and check
-for the range of the pin of the credit card in the subquery. The subquery will return a tuple if the subquery's 'WHERE'
-condition is met, and we can set the cc_number and check for range of pin in the subquery's 'WHERE' condition. To check for
-pin range. We start by checking if pin is >= 1 and < 9999. 
+For part 8, we want to find the pin of a credit card number using the boolean check. To do so, we first start by
+entering a valid account number which we know will yeild as valid. Then we make an 'EXISTS' statement following an
+'AND', and check for the range of the pin of the credit card in the subquery. The subquery will return a tuple if the
+subquery's 'WHERE' condition is met, and we can set the cc_number and check for range of pin in the subquery's 'WHERE'
+condition. To check for pin range. We start by checking if pin is >= 1 and < 9999.
 101 and exists (select True from credit where cc_number=1234123412341234 and pin>=1 and pin<9999) --
 
-Then we increase the lowerbound to 1000. Then I tried to decrease the upperbound and found 4000 is the lowest upperbound in 
-the thousands that can yeild valid. I then increase the lowerbound from 1000 to 3000, then increase each digit of the 
+Then we increase the lowerbound to 1000. Then I tried to decrease the upperbound and found 4000 is the lowest upperbound
+in the thousands that can yeild valid. I then increase the lowerbound from 1000 to 3000, then increase each digit of the
 lowerbound until I found 3318 is the highest lowerbound.
 101 and exists (select True from credit where cc_number=1234123412341234 and pin>=3318 and pin<4000) --
 

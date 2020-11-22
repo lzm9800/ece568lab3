@@ -1,4 +1,3 @@
-Part 1 used a XSS attack that inputs a form and javascript code into the search field. And the search field interpretes the input as actual html code. The attack then constructed a fake login screen and submits recorded info to a designated web address
 <form id = "phishing_form">
     <label for="ece568-2020f-user">User name:</label><br>
     <input name="user" type="TEXT" id="ece568-2020f-user"><br>
