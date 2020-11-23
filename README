@@ -29,7 +29,9 @@ transfer request, the second image has no source. The first image's onerror func
 to be the confirm URL of the transfer request. This will make sure that the confirm URL is requested after the transfer request.
 
 Part 5 Explanation:
-
+To get the token for making a transfer, we need to make 2 iframes. First one will go to transfer=main, and on click, it
+calls my Javascript function to get the token value from the form of the first iframe. The second iframe is used to make
+the transfer. In the Javascript, it will get the second iframe and set its src to the transfer link with the token appended.
 
 Part 6 Explanation:
 Part 6 is an exploit in website's SQL that allows attacker to inject a SQL command as a string in the WHERE condition. 
