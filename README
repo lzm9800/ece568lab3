@@ -24,7 +24,9 @@ The field that's exploitable is "Message" field. To exploit, a HTML image link i
 is a forged request that transfers 5000.
 
 Part 4 Explanation:
-
+The field that's exploitable is "Message" field. The message body contains 2 images, the first one has source as the mallicious
+transfer request, the second image has no source. The first image's onerror function sets the source of the second image
+to be the confirm URL of the transfer request. This will make sure that the confirm URL is requested after the transfer request.
 
 Part 5 Explanation:
 

