@@ -20,7 +20,8 @@ http://localhost:6869/WebGoat/start.mvc#attack/752417971/900?&input2=<SCRIPT>doc
 
 
 Part 3 Explanation:
-
+The field that's exploitable is "Message" field. To exploit, a HTML image link is put inside of the "Message" field. The image link 
+is a forged request that transfers 5000.
 
 Part 4 Explanation:
 
